@@ -46,6 +46,7 @@
 // const orderedQuantity = 6;
 // const deliveryFee = 50;
 // const totalPrice = pricePerDroid * orderedQuantity + deliveryFee;
+
 // const message = `You ordered droids worth ${totalPrice} credits`;
 // console.log(message);
 
@@ -102,4 +103,98 @@
 
 // function makeMessage(name, price) {
 //   return `You picked ${name}, price per item is ${price} credits`;
+// }
+
+// function checkAge(age) {
+//   if (age >= 18) {
+//     return "You are an adult";
+//   }
+// }
+// console.log(checkAge(20)); // "You are an adult"
+// console.log(checkAge(17)); // undefined
+// console.log(checkAge(10)); // undefined
+// console.log(checkAge(30)); // "You are an adult"
+
+// function checkAge(age) {
+//   if (age >= 18) {
+//     return "You are an adult";
+//   }
+// }
+// console.log(checkAge(20));
+// console.log(checkAge(17));
+// console.log(checkAge(10));
+// console.log(checkAge(30));
+
+// function checkStorage(available, ordered) {
+//   if (ordered > available) {
+//     return "Not enough goods in stock!";
+//   } else {
+//     return "Order is processed, our manager will contact you";
+//   }
+// }
+// // console.log(checkStorage);
+// console.log(available);
+// console.log(ordered);
+
+// if (ordered === 0) {
+//   return "There are no products in the order!";
+// } else if (ordered > available) {
+//   return "Your order is too large, there are not enough items in stock!";
+// } else {
+//   return "The order is accepted, our manager will contact you";
+// }
+
+// function checkPassword(password) {
+//   const correctPassword = "jqueryismyjam";
+//   return password === correctPassword
+//     ? "Access granted"
+//     : "Access denied, wrong password!";
+// }
+
+// function getSubscriptionPrice(type) {
+//   switch (type) {
+//     case "starter":
+//       return 0;
+//     case "professional":
+//       return 20;
+//     case "organization":
+//       return 50;
+//     default:
+//       return "Invalid subscription type!";
+//   }
+// }
+// console.log(getSubscriptionPrice);
+
+// function getSubscriptionPrice(type) {
+//     switch (type) {
+//         case "starter":
+//             return 0;
+//         case "professional":
+//             return 20;
+//         case "organization":
+//             return 50;
+//         default:
+//             return "Invalod subscription type!";
+//     }
+// }
+
+// function isNumberInRange(start, end, number) {
+//   return number >= start && number <= end;
+// }
+// console.log(isNumberInRange);
+
+// function isNumberInRange(start, end, number) {
+//     return number >= start && number <= end;
+// }
+
+// function checkAccess(subType) {
+//   return subType === "pro" || subType === "vip";
+// }
+
+// function checkAccess(subType) {
+//     return subType === "pro" || subType === "vip";
+// }
+
+// function toggleModalVisibility(isVisible) {
+//   return !isVisible;
 // }
