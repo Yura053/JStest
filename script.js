@@ -843,21 +843,408 @@
 // console.log(bestScore);
 // console.log(worstScore);
 
-const defaultSettings = {
-  theme: "light",
-  public: true,
-  withPassword: false,
-  minNumberOfQuestions: 10,
-  timePerQuestion: 60,
-};
-const overrideSettings = {
-  public: false,
-  withPassword: true,
-  timePerQuestion: 30,
-};
+// const defaultSettings = {
+//   theme: "light",
+//   public: true,
+//   withPassword: false,
+//   minNumberOfQuestions: 10,
+//   timePerQuestion: 60,
+// };
+// const overrideSettings = {
+//   public: false,
+//   withPassword: true,
+//   timePerQuestion: 30,
+// };
 
-const finalSettings = {
-  ...defaultSettings,
-  ...overrideSettings,
-};
-console.log(finalSettings);
+// const finalSettings = {
+//   ...defaultSettings,
+//   ...overrideSettings,
+// };
+// console.log(finalSettings);
+
+///////////////////////////// TASK 5
+// function makePizza() {
+//   return "Your pizza is being prepared, please wait.";
+// }
+// const result = makePizza();
+
+// const pointer = makePizza;
+
+// function deliverPizza(pizzaName) {
+//   return `Delivering ${pizzaName} pizza.`;
+// }
+
+// function makePizza(pizzaName) {
+//   return `Pizza ${pizzaName} is being prepared, please wait...`;
+// }
+
+// function makeMessage(pizzaName, callback) {
+//   return callback(pizzaName);
+// }
+
+// function makePizza(pizzaName, callback) {
+//   console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
+//   callback(pizzaName);
+// }
+
+// makePizza("Royal Grand", function deliverPizza(pizzaName) {
+//   console.log(`Delivering pizza ${pizzaName}`);
+// });
+
+// makePizza("Ultracheese", function eatPizza(pizzaName) {});
+
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+
+//   orderedItems.forEach(function (number) {
+//     totalPrice += number;
+//   });
+
+//   return totalPrice;
+// }
+// function filterArray(numbers, value) {
+//   const total = [];
+//   numbers.forEach(function (number) {
+//     if (number > value) {
+//       total.push(number);
+//     }
+//   });
+//   return total;
+// }
+// console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+// console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
+// console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
+// console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
+// console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
+
+// const calculateTotalPrice = (quantity, pricePerItem) => {
+//   return quantity * pricePerItem;
+// };
+
+// const calculateTotalPrice = (quantity, pricePerItem) => quantity * pricePerItem;
+// console.log(calculateTotalPrice);
+
+// const calculateTotalPrice = (orderedItems) => {
+//   let totalPrice = 0;
+
+//   orderedItems.forEach((item) => {
+//     totalPrice += item;
+//   });
+
+//   return totalPrice;
+// };
+// console.log(calculateTotalPrice([12, 85, 37, 4])); // 138
+// console.log(calculateTotalPrice([164, 48, 291])); // 503
+// console.log(calculateTotalPrice([412, 371, 94, 63, 176])); // 1116
+
+// const filterArray = (numbers, value) => {
+//   const filteredNumbers = [];
+
+//   numbers.forEach((number) => {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   });
+
+//   return filteredNumbers;
+// };
+
+// console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+// console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
+// console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
+// console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
+// console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
+
+/////////////////////////////////////////////////////////
+// function changeEven(numbers, value) {
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] % 2 === 0) {
+//       numbers[i] = numbers[i] + value;
+//     }
+//   }
+// }
+
+// // з верху початкове з низу змінив
+
+// function changeEven(numbers, value) {
+//   const newArray = [];
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] % 2 === 0) {
+//       newArray.push(numbers[i] + value);
+//     } else {
+//       newArray.push(numbers[i]);
+//     }
+//   }
+//   return newArray;
+// }
+//////////////////////////////////////////////////
+
+// const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+
+// const planetsLengths = planets.map((planet) => planet.length);
+// console.log();
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Tell-Tale Heart",
+//     author: "Edgar Allan Poe",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+
+// const titles = books.map((book) => book.title);
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["adventure", "history"],
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     genres: ["fiction"],
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     genres: ["horror", "mysticism"],
+//   },
+// ];
+
+// const genres = books.flatMap((book) => book.genres);
+
+// const getUserEmails = (users) => {
+//   return users.map((user) => user.email);
+// };
+// console.log(getUserEmails);
+
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+
+// const evenNumbers = numbers.filter((number) => number % 2 === 0);
+// const oddNumbers = numbers.filter((numb) => numb % 2 !== 0);
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Tell-Tale Heart",
+//     author: "Edgar Allan Poe",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+
+// const MIN_RATING = 8;
+// const AUTHOR = "Bernard Cornwell";
+
+// const topRatedBooks = books.filter((ratin) => ratin.rating >= MIN_RATING);
+// const booksByAuthor = books.filter((aut) => aut.author === AUTHOR);
+
+// const getUsersWithEyeColor = (users, color) => {
+//   const colorelov = users.filter((user) => user.eyeColor === color.);
+//   return colorelov;
+// };
+
+// const getUsersWithAge = (users, minAge, maxAge) => {
+//   const userAge = users.filter(
+//     (user) => user.age >= minAge && user.age <= maxAge,
+//   );
+//   return userAge;
+// };
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Tell-Tale Heart",
+//     author: "Edgar Allan Poe",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+// ];
+// const BOOK_TITLE = "The Tell-Tale Heart";
+// const AUTHOR = "Robert Sheckley";
+
+// const bookWithTitle = books.find((book) => book.title === BOOK_TITLE);
+// const bookByAuthor = books.find((bybook) => bybook.author === AUTHOR);
+
+// const getUserWithEmail = (users, email) => {
+//   const getUser = users.find((idEmail) => idEmail.email === email);
+//   return getUser;
+// };
+
+// const isEveryUserActive = (users) => {
+//   const everyUsers = users.every((user) => user.isActive === true);
+//   return everyUsers;
+// };
+
+// const isAnyUserActive = (users) => {
+//   const anyUser = users.some( user => user.isActive );
+//   return anyUser;
+// };
+
+// const players = {
+//   mango: 1270,
+//   poly: 468,
+//   ajax: 710,
+//   kiwi: 244,
+// };
+// const playtimes = Object.values(players); // [1270, 468, 710, 244]
+
+// const totalPlayTime = playtimes.reduce((acc, item) => acc + item);
+
+// const averagePlayTime = totalPlayTime / playtimes.length;
+
+// const players = [
+//   { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+//   { name: "Poly", playtime: 469, gamesPlayed: 2 },
+//   { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+//   { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+// ];
+
+// const totalAveragePlaytimePerGame = players.reduce((acc, player) => {
+//   return acc + player.playtime / player.gamesPlayed;
+// }, 0);
+
+// const calculateTotalBalance = (users) => {
+//   return users.reduce((acc, user) => {
+//     return acc + user.balance;
+//   }, 0);
+// };
+
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// const authors = [
+//   "Tanith Lee",
+//   "Bernard Cornwell",
+//   "Robert Sheckley",
+//   "Edgar Allan Poe",
+// ];
+
+// const ascendingReleaseDates = releaseDates.toSorted();
+
+// const alphabeticalAuthors = authors.toSorted();
+
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// /////сортию з малого до більшого
+// const ascendingReleaseDates = releaseDates.toSorted((a, b) => a - b);
+// //// сортирує з великого до меншого
+// const descendingReleaseDates = releaseDates.toSorted((a, b) => b - a);
+
+// const authors = [
+//   "Tanith Lee",
+//   "Bernard Cornwell",
+//   "Robert Sheckley",
+//   "Edgar Allan Poe",
+//   "Howard Lovecraft",
+// ];
+
+// const authorsInAlphabetOrder = authors.toSorted((a, b) => a.localeCompare(b));
+
+// const authorsInReversedOrder = authors.toSorted((a, b) => b.localeCompare(a));
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Tell-Tale Heart",
+//     author: "Edgar Allan Poe",
+//     rating: 7.75,
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     rating: 7.94,
+//   },
+//   {
+//     title: "Enemy of God",
+//     author: "Bernard Cornwell",
+//     rating: 8.67,
+//   },
+// ];
+// Масив books містить масив об'єктів книг, кожен з яких містить властивості title, author, rating.
+
+// Доповни код таким чином, щоб:
+
+// У змінній sortedByAuthorName вийшов масив книг, відсортований за ім'ям автора в алфавітному порядку.
+// У змінній sortedByReversedAuthorName вийшов масив книг, відсортований за ім'ям автора у зворотному алфавітному порядку.
+// У змінній sortedByAscendingRating вийшов масив книг, відсортований за зростанням рейтингу.
+// У змінній sortedByDescentingRating вийшов масив книг, відсортований за спаданням рейтингу.
+
+// const sortedByAuthorName = books.toSorted((a, b) =>
+//   a.author.localeCompare(b.author),
+// );
+
+// const sortedByReversedAuthorName = books.toSorted((a, b) =>
+//   b.author.localeCompare(a.author),
+// );
+
+// const sortedByAscendingRating = books.toSorted((a, b) => a.rating - b.rating);
+
+// const sortedByDescentingRating = books.toSorted((a, b) => b.rating - a.rating);
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Tell-Tale Heart",
+//     author: "Edgar Allan Poe",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   {
+//     title: "The Dreams in the Witch House",
+//     author: "Howard Lovecraft",
+//     rating: 8.67,
+//   },
+// ];
+// const MIN_BOOK_RATING = 8;
+
+// const names = books
+//   .filter((book) => book.rating > MIN_BOOK_RATING)
+//   .map((book) => book.author)
+//   .toSorted((a, b) => a.localeCompare(b));
