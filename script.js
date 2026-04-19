@@ -1620,50 +1620,111 @@
 // Виклик mango.isBlacklisted("mango@mail.com") повертає false
 // Виклик mango.isBlacklisted("poly@mail.com") повертає true
 
-class User {
-  email;
+// class User {
+//   email;
 
-  constructor(email) {
-    this.email = email;
-  }
+//   constructor(email) {
+//     this.email = email;
+//   }
 
-  get email() {
-    return this.email;
-  }
+//   get email() {
+//     return this.email;
+//   }
 
-  set email(newEmail) {
-    this.email = newEmail;
-  }
-}
-class Admin extends User {
-  static role = {
-    BASIC: "basic",
-    SUPERUSER: "superuser",
-  };
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// class Admin extends User {
+//   static role = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser",
+//   };
 
-  constructor(params) {
-    super(params.email);
-    this.access = params.access;
-    this.blacklistedEmails = [];
-  }
-  blacklist(email) {
-    this.blacklistedEmails.push(email);
-  }
+//   constructor(params) {
+//     super(params.email);
+//     this.access = params.access;
+//     this.blacklistedEmails = [];
+//   }
+//   blacklist(email) {
+//     this.blacklistedEmails.push(email);
+//   }
 
-  isBlacklisted(email) {
-    return this.blacklistedEmails.includes(email);
-  }
-}
+//   isBlacklisted(email) {
+//     return this.blacklistedEmails.includes(email);
+//   }
+// }
 
-const mango = new Admin({
-  email: "mango@mail.com",
-  access: Admin.role.SUPERUSER,
+// const mango = new Admin({
+//   email: "mango@mail.com",
+//   access: Admin.role.SUPERUSER,
+// });
+
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.access); // "superuser"
+
+// mango.blacklist("poly@mail.com");
+// console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+// console.log(mango.isBlacklisted("mango@mail.com")); // false
+// console.log(mango.isBlacklisted("poly@mail.com")); // true
+
+///////MODUL 99999 ///////////////////
+
+//////// work /////
+
+// const input =  document.querySelector ("[name = username]");
+// const formData = {
+//     username: '',
+// };
+// input.addEventListener('input', (event) => {
+//     formData.username = event.target.value;
+// }
+//  localStorage.setItem('username', formData.username);
+// )
+
+// const saved = localStorage.getItem('username');
+// if (saved){
+//     input.value = saved;
+// }
+const form = document.querySelector(".feedback-form");
+
+const formData = {
+  email: "",
+  message: "",
+};
+
+form.addEventListener("input", (event) => {
+  const { name, value } = event.target;
+
+  formData[name] = value;
+  localStorage.setItem("feedback-form-state", JSON.stringify(formData));
 });
 
-console.log(mango.email); // "mango@mail.com"
-console.log(mango.access); // "superuser"
+const saved = localStorage.getItem("feedback-form-state");
+if (saved) {
+  const data = JSON.parse(saved);
 
-mango.blacklist("poly@mail.com");
-console.log(mango.blacklistedEmails); // ["poly@mail.com"]
-console.log(mango.isBlacklisted("mango@mail.com")); // false
-console.log(mango.isBlacklisted("poly@mail.com")); // true
+  formData.email = data.email || "";
+  formData.message = data.message || "";
+
+  form.elements.email.value = formData.email;
+  form.elements.message.value = formData.message;
+}
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (!formData.email.trim() || !formData.message.trim()) {
+    alert("Fill please all fields");
+    return;
+  }
+
+  console.log(formData);
+
+  localStorage.removeItem("feedback-form-state");
+
+  form.reset();
+
+  formData.email = "";
+  formData.message = "";
+});
