@@ -1686,45 +1686,88 @@
 // if (saved){
 //     input.value = saved;
 // }
-const form = document.querySelector(".feedback-form");
+// const form = document.querySelector(".feedback-form");
 
-const formData = {
-  email: "",
-  message: "",
-};
+// const formData = {
+//   email: "",
+//   message: "",
+// };
 
-form.addEventListener("input", (event) => {
-  const { name, value } = event.target;
+// form.addEventListener("input", (event) => {
+//   const { name, value } = event.target;
 
-  formData[name] = value;
-  localStorage.setItem("feedback-form-state", JSON.stringify(formData));
-});
+//   formData[name] = value;
+//   localStorage.setItem("feedback-form-state", JSON.stringify(formData));
+// });
 
-const saved = localStorage.getItem("feedback-form-state");
-if (saved) {
-  const data = JSON.parse(saved);
+// const saved = localStorage.getItem("feedback-form-state");
+// if (saved) {
+//   const data = JSON.parse(saved);
 
-  formData.email = data.email || "";
-  formData.message = data.message || "";
+//   formData.email = data.email || "";
+//   formData.message = data.message || "";
 
-  form.elements.email.value = formData.email;
-  form.elements.message.value = formData.message;
-}
+//   form.elements.email.value = formData.email;
+//   form.elements.message.value = formData.message;
+// }
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+// form.addEventListener("submit", (event) => {
+//   event.preventDefault();
 
-  if (!formData.email.trim() || !formData.message.trim()) {
-    alert("Fill please all fields");
-    return;
-  }
+//   if (!formData.email.trim() || !formData.message.trim()) {
+//     alert("Fill please all fields");
+//     return;
+//   }
 
-  console.log(formData);
+//   console.log(formData);
 
-  localStorage.removeItem("feedback-form-state");
+//   localStorage.removeItem("feedback-form-state");
 
-  form.reset();
+//   form.reset();
 
-  formData.email = "";
-  formData.message = "";
-});
+//   formData.email = "";
+//   formData.message = "";
+// });
+
+// ✔ проміс = результат в майбутньому
+// ✔ resolve = успіх
+// ✔ reject = помилка
+// ✔ then = обробка успіху
+
+// ✔ catch = обробка помилки
+// ✔ промісифікація = переробка з колбеків
+
+// Метод	Що робить
+// Promise.all	чекає ВСІ, падає якщо 1 впав
+// Promise.allSettled	чекає ВСІ, не падає ніколи
+// Promise.race	бере ПЕРШИЙ результат
+
+// then БЕЗ console.log = нічого не виводить
+// він просто передає значення далі
+
+// 🔥 Головне правило
+
+// 👉 якщо в then є throw →
+
+// всі наступні then пропускаються
+// одразу йде в catch
+
+// 👉 finally → завжди виконується
+
+// catch НЕ зупиняє код
+// 👉 якщо там є return → значення йде далі в then
+
+///////////////////////////////////////
+// Метод	Як думати
+
+// all	всі або нічого
+// allSettled	покажи все
+// race	хто перший
+// 🔥 щоб закріпити
+
+// Запам’ятай так:
+
+// all → ❌ один впав → catch
+// allSettled → ✅ показує все
+// race → ⚡ перший виграв
+//////////////////////////////////////////
